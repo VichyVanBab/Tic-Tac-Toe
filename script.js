@@ -1,3 +1,6 @@
+const buttons = document.querySelectorAll('.btn') 
+const title = document.querySelector('.game-title')
+
 function Gameboard(){
     let board = [];
     const rows = 3;
@@ -82,20 +85,16 @@ function Gameboard(){
             return 'The board if full. It is a tie! Good game'
         }
     }
-    addValue(0,0,'x')
-   addValue(0,1,'x')
-   addValue(0,2,'x')
 
-    
     return {addValue,getBoard,checkWin,checBoardFull};
 }
 
-const board = Gameboard();
+function playGame(e){
+    title.textContent = e.target.id;
+}
 
-board.addValue(1,1,'o')
+buttons.forEach(btn => btn.addEventListener('click', playGame))
 
-console.table(board.getBoard())
-console.log(board.getBoard())
-console.log(board.checkWin())
-console.log(board.checBoardFull())
+
+
 

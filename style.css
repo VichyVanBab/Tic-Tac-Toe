@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.btn{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.game-title{
+    background-color: aqua;
+    color: rgb(5, 43, 43);
+}

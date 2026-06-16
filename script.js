@@ -17,84 +17,138 @@ function Gameboard(){
 
     const getBoard = () => board;
 
-    function addValue (row,column,val){
-        let isCheckWin = checkWin() === 'X win' || checkWin() === 'O win';
-        if(isCheckWin){
-            console.log('There\'s already a winner');
+    function addValue (row,column,val, button){
+        if(board[row][column] === 'x' || board[row][column] === 'o'){
+            title.textContent = 'hey'
         } else{
-            if(board[row][column] === 'x' || board[row][column] === 'o'){
-                console.error('It\'s already taken. choose another place');
-            } else{
-                board[row][column] = val;
-            } 
+             button.textContent = val
+            board[row][column] = val;
         }
     }
+
 
     function checkWin(){
         let firstArr = board[0]
         let secondArr = board[1]
         let thirdArr = board[2]
         if(firstArr[0] === 'x' && firstArr[1] === 'x' && firstArr[2] === 'x'){
-            return `X win`
+            title.textContent = 'X wins'
+            return true
         } else if(firstArr[0] === 'o' && firstArr[1] === 'o' && firstArr[2] === 'o'){
-            return 'O win'
-        } else if(secondArr[0] === 'x' && secondArr[1] === 'x' && secondArr[2] ==='x'){
-            return 'X win'
+            title.textContent = 'O wins'
+            return true 
+         } else if(secondArr[0] === 'x' && secondArr[1] === 'x' && secondArr[2] ==='x'){
+            title.textContent = 'X wins'
+            return true
         } else if(secondArr[0] === 'o' && secondArr[1] === 'o' && secondArr[2] === 'o'){
-            return 'O win'
+            title.textContent = 'O wins'
+            return true
         }else if(thirdArr[0] === 'x' && thirdArr[1] === 'x' && thirdArr[2] ==='x'){
-            return 'X win'
+            title.textContent = 'X wins'
+            return true
         } else if(thirdArr[0] === 'o' && thirdArr[1] === 'o' && thirdArr[2] === 'o'){
-            return 'O win'
+            title.textContent = 'O wins'
+            return true
         }else if(board[0][0] === 'x' && board[1][0] === 'x' && board[2][0] ==='x'){
-            return 'X win'
+            title.textContent = 'X wins'
+            return true
         } else if(board[0][0] === 'o' && board[1][0] === 'o' && board[2][0] === 'o'){
-            return 'O win'
+            title.textContent = 'O wins'
+            return true
         } else if(board[0][1] === 'x' && board[1][1] === 'x' && board[2][1] ==='x'){
-            return 'X win'
-        } else if(board[0][1] === 'o' && board[1][1] === 'o' && baord[2][1] === 'o'){
-            return 'O win'
+            title.textContent = 'X wins'
+            return true
+        } else if(board[0][1] === 'o' && board[1][1] === 'o' && board[2][1] === 'o'){
+            title.textContent = 'O wins'
+            return true
         } else if(board[0][2] === 'x' && board[1][2] === 'x' && board[2][2] ==='x'){
-            return 'X win'
+            title.textContent = 'X wins'
+            return true
         } else if(board[0][2] === 'o' && board[1][2] === 'o' && board[2][2] === 'o'){
-            return 'O win'
+            title.textContent = 'O wins'
+            return true
         } else if(board[0][0] === 'x' && board[1][1] === 'x' && board[2][2] ==='x'){
-            return 'X win'
-        } else if(board[0][0] === 'o' && boar[1][1] === 'o' && board[2][2] === 'o'){
-            return 'O win'
-        } else if(board[0][2] === 'x' && board[1][1] === 'x' && board[2][0] ==='x'){
-            return 'X win'
-        } else if(board[0][2] === 'o' && board[1][1] === 'o' && board[2][0] === 'o'){
-            return 'O win'
-        } else if(board[0][0] === 'x' && board[1][1] === 'x' && board[2][2] ==='x'){
-            return 'X win'
+            title.textContent = 'X wins'
+            return true
         } else if(board[0][0] === 'o' && board[1][1] === 'o' && board[2][2] === 'o'){
-            return 'O win'
+            title.textContent = 'O wins'
+            return true
+        } else if(board[0][2] === 'x' && board[1][1] === 'x' && board[2][0] ==='x'){
+            title.textContent = 'X wins'
+            return true
+        } else if(board[0][2] === 'o' && board[1][1] === 'o' && board[2][0] === 'o'){
+            title.textContent = 'O wins'
+            return true
+        } else if(board[0][0] === 'x' && board[1][1] === 'x' && board[2][2] ==='x'){
+            title.textContent = 'X wins'
+            return true
+        } else if(board[0][0] === 'o' && board[1][1] === 'o' && board[2][2] === 'o'){
+            title.textContent = 'O wins'
+            return true
         } 
     }
 
-    function checBoardFull (){
+    function checkBoardFull (){
         let firstRow = board[0]
         let secondRow = board[1]
         let thirRow = board[2]
         let firstArrFull = firstRow.filter(item => item === 'x' || item === 'o').length;
         let secondArrFull = secondRow.filter(item => item === 'x' || item === 'o').length;
         let thirdArrFull = thirRow.filter(item => item === 'x' || item === 'o').length;
-
+        
         if(firstArrFull + secondArrFull + thirdArrFull === 9){
-            return 'The board if full. It is a tie! Good game'
+            title.textContent = 'The board is full';
         }
     }
 
-    return {addValue,getBoard,checkWin,checBoardFull};
+   return {addValue,getBoard,checkWin,checkBoardFull};
 }
 
-function playGame(e){
-    title.textContent = e.target.id;
-}
-
-buttons.forEach(btn => btn.addEventListener('click', playGame))
+function playGame(){
 
 
+    let board = Gameboard()
+    let token = 'x'
+        const obj = {
+            firstCase : [0,0],
+            secondCase: [0,1],
+            thirdCase : [0,2],
+            fourthCase: [1,0],
+            fifthCase: [1,1],
+            sixthCase: [1,2],
+            seventhCase: [2,0],
+            eigthCase: [2,1],
+            ninthCase: [2,2]
+        }
+    buttons.forEach(btn => btn.addEventListener('click', (e) =>{
+            let btb = e.target.id
+            let row = obj[btb][0]
+            let col = obj[btb][1]
+            if(board.getBoard()[row][col] === 'x' 
+            || board.getBoard()[row][col] === 'o'){
+                title.textContent = `The ${btb} is occupied`
+            } else if (board.checkWin()){
+                title.textContent = 'bravo'
+            }else{
+                if(token === 'x' ){
+                    title.textContent = `${token} Plays`
+                    board.addValue(row, col, token, btn)
+                    token = 'o'  
+                } else if(token === 'o' ){
+                    title.textContent = `${token} plays`
+                    board.addValue(row, col, token, btn)
+                    token = 'x'
+                }
+        }   
+        board.checkBoardFull()
+        board.checkWin()
+        
+    }))
+
+    }
+
+
+
+playGame()
 
 

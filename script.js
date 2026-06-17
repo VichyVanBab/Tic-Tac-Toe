@@ -22,6 +22,7 @@ function Gameboard(){
             title.textContent = 'hey'
         } else{
              button.textContent = val
+             button.className = 'button'
             board[row][column] = val;
         }
     }
@@ -32,58 +33,58 @@ function Gameboard(){
         let secondArr = board[1]
         let thirdArr = board[2]
         if(firstArr[0] === 'x' && firstArr[1] === 'x' && firstArr[2] === 'x'){
-            title.textContent = 'X wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(firstArr[0] === 'o' && firstArr[1] === 'o' && firstArr[2] === 'o'){
-            title.textContent = 'O wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true 
          } else if(secondArr[0] === 'x' && secondArr[1] === 'x' && secondArr[2] ==='x'){
-            title.textContent = 'X wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(secondArr[0] === 'o' && secondArr[1] === 'o' && secondArr[2] === 'o'){
-            title.textContent = 'O wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         }else if(thirdArr[0] === 'x' && thirdArr[1] === 'x' && thirdArr[2] ==='x'){
-            title.textContent = 'X wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(thirdArr[0] === 'o' && thirdArr[1] === 'o' && thirdArr[2] === 'o'){
-            title.textContent = 'O wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         }else if(board[0][0] === 'x' && board[1][0] === 'x' && board[2][0] ==='x'){
-            title.textContent = 'X wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][0] === 'o' && board[1][0] === 'o' && board[2][0] === 'o'){
-            title.textContent = 'O wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][1] === 'x' && board[1][1] === 'x' && board[2][1] ==='x'){
-            title.textContent = 'X wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][1] === 'o' && board[1][1] === 'o' && board[2][1] === 'o'){
-            title.textContent = 'O wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][2] === 'x' && board[1][2] === 'x' && board[2][2] ==='x'){
-            title.textContent = 'X wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][2] === 'o' && board[1][2] === 'o' && board[2][2] === 'o'){
-            title.textContent = 'O wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][0] === 'x' && board[1][1] === 'x' && board[2][2] ==='x'){
-            title.textContent = 'X wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][0] === 'o' && board[1][1] === 'o' && board[2][2] === 'o'){
-            title.textContent = 'O wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][2] === 'x' && board[1][1] === 'x' && board[2][0] ==='x'){
-            title.textContent = 'X wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][2] === 'o' && board[1][1] === 'o' && board[2][0] === 'o'){
-            title.textContent = 'O wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][0] === 'x' && board[1][1] === 'x' && board[2][2] ==='x'){
-            title.textContent = 'X wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } else if(board[0][0] === 'o' && board[1][1] === 'o' && board[2][2] === 'o'){
-            title.textContent = 'O wins'
+            title.textContent = `X wins ${String.fromCodePoint(0x1F389)}`
             return true
         } 
     }
@@ -97,7 +98,7 @@ function Gameboard(){
         let thirdArrFull = thirRow.filter(item => item === 'x' || item === 'o').length;
         
         if(firstArrFull + secondArrFull + thirdArrFull === 9){
-            title.textContent = 'The board is full';
+            title.textContent = 'The board is full, it is a tie!';
         }
     }
 
@@ -105,8 +106,6 @@ function Gameboard(){
 }
 
 function playGame(){
-
-
     let board = Gameboard()
     let token = 'x'
         const obj = {

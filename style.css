@@ -1,21 +1,43 @@
+:root{
+    --bg-color-btn: rgb(148, 160, 44);; 
+    --title-bg-color: rgba(12, 59, 59, 0.966);
+    --border-color-button: white;
+    --body-bg-color: rgb(196, 196, 186);
+}
+
+
 body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: var(--body-bg-color);
 }
 .container{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 3px 3px 20px 20px  #888888;
 }
 .btn{
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    border: 1px solid rgb(167, 158, 158);
+}
+.button{
+    font-size: 12em;
+    background-color: var(--bg-color-btn);
+    color: whitesmoke;
+    border-color: var(--border-color-button);
+}
+.button:hover{
     cursor: pointer;
 }
 .game-title{
-    background-color: aqua;
-    color: rgb(5, 43, 43);
+    /* background-color: var(--title-bg-color); */
+    color: rgb(128, 110, 8);
+    font-size: 2em;
+    box-shadow: 2px 2px wheat;
 }

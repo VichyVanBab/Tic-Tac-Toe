@@ -27,7 +27,7 @@ body{
     border: 1px solid rgb(167, 158, 158);
 }
 .button{
-    font-size: 12em;
+    font-size: 6em;
     background-color: var(--bg-color-btn);
     color: whitesmoke;
     border-color: var(--border-color-button);
@@ -45,7 +45,9 @@ body{
   background-color: #4CAF50;   
   color: white;                
   font-size: 18px;            
-  padding: 9px 12px;          
+  width: 79px;
+  height: 50px;
+  align-self: center;        
   border: none;                
   border-radius: 12px;          
   cursor: pointer;             

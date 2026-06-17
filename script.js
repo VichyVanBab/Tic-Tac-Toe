@@ -1,5 +1,6 @@
 const buttons = document.querySelectorAll('.btn') 
 const title = document.querySelector('.game-title')
+const startButton = document.querySelector('.start-btn')
 
 function Gameboard(){
     let board = [];
@@ -148,6 +149,4 @@ function playGame(){
 
 
 
-playGame()
-
-
+startButton.addEventListener('click', playGame)

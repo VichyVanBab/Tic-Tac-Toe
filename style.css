@@ -41,3 +41,19 @@ body{
     font-size: 2em;
     box-shadow: 2px 2px wheat;
 }
+.start-btn {
+  background-color: #4CAF50;   
+  color: white;                
+  font-size: 18px;            
+  padding: 12px 24px;          
+  border: none;                
+  border-radius: 8px;          
+  cursor: pointer;             
+  transition: background-color 0.3s ease;
+}
+.hero{
+    display: flex;
+    gap: 12px;
+    margin-top: -40px;
+    margin-bottom: 11px;
+}
